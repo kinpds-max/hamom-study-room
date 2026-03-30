@@ -135,9 +135,15 @@ function updateNavigation(sections) {
 function createVideoCard(video) {
     const card = document.createElement('div');
     card.className = 'video-card';
+    
+    // Add lock icon if it's a movie section
+    const isLocked = video.section.includes('영화') || video.section.toLowerCase().includes('movie');
+    const lockHtml = isLocked ? '<div class="lock-overlay"><i class="fas fa-lock"></i></div>' : '';
+
     card.innerHTML = `
         <div class="thumbnail-wrapper">
             <img src="${video.thumbnail}" alt="${video.title}" loading="lazy">
+            ${lockHtml}
             <div class="play-button-overlay">
                 <i class="fas fa-play" style="color: white; font-size: 1.5rem;"></i>
             </div>
@@ -147,7 +153,16 @@ function createVideoCard(video) {
             <p>${video.description}</p>
         </div>
     `;
+
     card.addEventListener('click', () => {
+        if (isLocked) {
+            const password = prompt("이 강의는 잠겨 있습니다. 비밀번호를 입력하세요:");
+            if (password !== "1191004") {
+                alert("비밀번호가 틀렸습니다.");
+                return;
+            }
+        }
+        
         dom.modalTitle.textContent = video.title;
         dom.modalDesc.textContent = video.description;
         dom.modalIframe.src = `https://www.youtube.com/embed/${video.videoId}?autoplay=1`;
@@ -173,13 +188,16 @@ async function syncWithTrello() {
 
     const newCards = await TrelloService.fetchCards(key, token, boardId);
     
-    if (newCards) {
+    if (newCards && newCards.length > 0) {
         appData = newCards;
         localStorage.setItem('trelloConfig', JSON.stringify({ key, token, boardId }));
-        dom.sourceBadge.textContent = "Trello Synced";
-        dom.sourceBadge.style.color = "#4cc9f0";
+        dom.sourceBadge.textContent = "Trello Connected";
+        dom.sourceBadge.style.color = "#00f5d4"; // Bright green for success
         renderSections();
+        alert(`성공적으로 트렐로와 연동되었습니다!\n총 ${newCards.length}개의 강의를 가져왔습니다.`);
         dom.settingsModal.style.display = 'none';
+    } else {
+        alert("데이터를 가져오지 못했습니다. 다음을 확인해 주세요:\n1. API 키와 토큰이 정확한지\n2. 보드 ID가 맞는지\n3. kinpds@gmail.com 계정이 보드에 초대되었는지");
     }
 
     dom.saveSettings.textContent = "설정 저장 및 동기화";
