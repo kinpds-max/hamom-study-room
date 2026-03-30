@@ -215,7 +215,24 @@ window.addEventListener('click', (e) => {
 });
 
 // Init
-document.addEventListener('DOMContentLoaded', () => {
-    loadConfig();
-    renderSections();
+document.addEventListener('DOMContentLoaded', async () => {
+    const config = JSON.parse(localStorage.getItem('trelloConfig'));
+    if (config && config.key && config.token && config.boardId) {
+        // Pre-fill inputs
+        dom.trelloKey.value = config.key;
+        dom.trelloToken.value = config.token;
+        dom.trelloBoard.value = config.boardId;
+        
+        // Auto-sync silently
+        console.log("Auto-syncing with Trello...");
+        const newCards = await TrelloService.fetchCards(config.key, config.token, config.boardId);
+        if (newCards) {
+            appData = newCards;
+            dom.sourceBadge.textContent = "Trello Auto-Synced";
+            dom.sourceBadge.style.color = "#4cc9f0";
+            renderSections();
+        }
+    } else {
+        renderSections();
+    }
 });
