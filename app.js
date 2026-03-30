@@ -180,16 +180,6 @@ async function syncWithTrello() {
     dom.saveSettings.disabled = false;
 }
 
-function loadConfig() {
-    const config = JSON.parse(localStorage.getItem('trelloConfig'));
-    if (config) {
-        dom.trelloKey.value = config.key;
-        dom.trelloToken.value = config.token;
-        dom.trelloBoard.value = config.boardId;
-        // Optionally auto-sync here if needed
-    }
-}
-
 // Event Listeners
 dom.nav.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI') {
