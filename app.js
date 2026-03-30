@@ -8,7 +8,7 @@ const defaultData = [
     { id: "v1", section: "video", title: "Video Study", description: "OpenAI Sora analysis", videoId: "HK6y8D_Kq3k", thumbnail: "https://img.youtube.com/vi/HK6y8D_Kq3k/maxresdefault.jpg" },
     { id: "a1", section: "automation", title: "Automation Study", description: "Workflow automation", videoId: "R_qA9p_Iu50", thumbnail: "https://img.youtube.com/vi/R_qA9p_Iu50/maxresdefault.jpg" },
     { id: "y1", section: "youtube", title: "YouTube Study", description: "Channel growth with AI", videoId: "V-9nS6L2W3w", thumbnail: "https://img.youtube.com/vi/V-9nS6L2W3w/maxresdefault.jpg" }
-     ];
+    ];
 
 let appData = [...defaultData];
 let dynamicSections = {};
@@ -65,7 +65,7 @@ const TrelloService = {
 
                                              let displayTitle = card.name;
                                             if (displayTitle === '\uc601\ud6545\uac15') {
-                                                                    displayTitle = 'Movie 5*';
+                                                                    displayTitle = '\uc601\ud654\uac15\uc758*';
                                             }
 
                                              return {
@@ -230,7 +230,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                               dom.trelloKey.value = key;
         dom.trelloToken.value = token;
         dom.trelloBoard.value = boardId;
-
 
                               if (key && token && boardId) {
                                           dom.sourceBadge.textContent = "Connecting...";
