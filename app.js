@@ -11,14 +11,7 @@ const defaultData = [
 ];
 
 let appData = [...defaultData];
-
-const sectionLabels = {
-    "movie": "영화수업",
-    "design": "AI디자인수업",
-    "video": "AI영상수업",
-    "automation": "AI자동화수업",
-    "youtube": "AI유튜브 수업"
-};
+let dynamicSections = {}; // To store listId -> listName mapping
 
 // UI Elements
 const dom = {
@@ -45,53 +38,47 @@ const dom = {
 const TrelloService = {
     async fetchCards(key, token, boardId) {
         try {
-            // Get all lists on the board first to match section names
             const listsUrl = `https://api.trello.com/1/boards/${boardId}/lists?key=${key}&token=${token}`;
             const listsResp = await fetch(listsUrl);
             const lists = await listsResp.json();
 
-            // Get all cards on the board
             const cardsUrl = `https://api.trello.com/1/boards/${boardId}/cards?key=${key}&token=${token}`;
             const cardsResp = await fetch(cardsUrl);
             const cards = await cardsResp.json();
 
+            // Store list names dynamically
+            dynamicSections = {};
+            lists.forEach(l => dynamicSections[l.id] = l.name);
+
             return this.transformData(cards, lists);
         } catch (error) {
             console.error("Trello Fetch Error:", error);
-            alert("트렐로 데이터를 가져오는데 실패했습니다. 설정을 확인해주세요.");
             return null;
         }
     },
 
     transformData(cards, lists) {
-        return cards.map(card => {
-            const list = lists.find(l => l.id === card.idList);
-            const section = this.mapSection(list ? list.name : '');
-            const videoId = this.extractYoutubeId(card.desc);
-            
-            return {
-                id: card.id,
-                section: section,
-                title: card.name,
-                description: card.desc.split('\n')[0], // Use first line as description
-                videoId: videoId,
-                thumbnail: videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : 'https://via.placeholder.com/640x360?text=No+Video'
-            };
-        }).filter(item => item.videoId); // Only show items with video
-    },
-
-    mapSection(listName) {
-        if (listName.includes('영화')) return 'movie';
-        if (listName.includes('디자인')) return 'design';
-        if (listName.includes('영상')) return 'video';
-        if (listName.includes('자동화')) return 'automation';
-        if (listName.includes('유튜브')) return 'youtube';
-        return 'movie'; // Default
+        return cards
+            .map(card => {
+                const listName = dynamicSections[card.idList] || "기타";
+                const videoId = this.extractYoutubeId(card.desc);
+                return {
+                    id: card.id,
+                    section: listName, // Use the actual list name as the section key
+                    title: card.name,
+                    description: card.desc.split('\n')[0] || "강의 설명이 없습니다.",
+                    videoId: videoId,
+                    thumbnail: videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : 'https://via.placeholder.com/640x360?text=No+Video',
+                    pos: card.pos // Keep track of the order set in Trello
+                };
+            })
+            .filter(item => item.videoId)
+            .sort((a, b) => a.pos - b.pos); // Sort by Trello position
     },
 
     extractYoutubeId(text) {
         const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
-        const match = text.match(regex);
+        const match = (text || '').match(regex);
         return match ? match[1] : null;
     }
 };
@@ -100,30 +87,49 @@ const TrelloService = {
 function renderSections(filter = 'all') {
     dom.gridWrapper.innerHTML = '';
     
-    const activeSections = filter === 'all' ? Object.keys(sectionLabels) : [filter];
+    // Get unique sections from current data
+    const sections = [...new Set(appData.map(v => v.section))];
+    
+    // Filter sections based on selection
+    const activeSections = filter === 'all' ? sections : [filter];
 
-    activeSections.forEach(sectionId => {
-        const sectionVideos = appData.filter(v => v.section === sectionId);
-        if (sectionVideos.length === 0 && filter !== 'all') return;
+    // Re-render Navigation dynamically if it's the first Trello sync
+    updateNavigation(sections);
+
+    activeSections.forEach(sectionName => {
+        const sectionVideos = appData.filter(v => v.section === sectionName);
+        if (sectionVideos.length === 0) return;
         
         const sectionElement = document.createElement('section');
         sectionElement.className = 'video-section fade-in';
         sectionElement.innerHTML = `
             <div class="section-header">
-                <h2>${sectionLabels[sectionId]}</h2>
+                <h2>${sectionName}</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="video-grid" id="grid-${sectionId}"></div>
+            <div class="video-grid" id="grid-${sectionName.replace(/\s+/g, '-')}"></div>
         `;
         
         dom.gridWrapper.appendChild(sectionElement);
-        const grid = document.getElementById(`grid-${sectionId}`);
+        const grid = document.getElementById(`grid-${sectionName.replace(/\s+/g, '-')}`);
         
         sectionVideos.forEach(video => {
             const card = createVideoCard(video);
             grid.appendChild(card);
         });
     });
+}
+
+function updateNavigation(sections) {
+    // Basic labels for localized names or icons could be added here if needed
+    // For now we just use the names from Trello as labels
+    const currentActive = document.querySelector('#category-nav li.active')?.dataset.section || 'all';
+    
+    let navHtml = `<li class="${currentActive === 'all' ? 'active' : ''}" data-section="all">전체보기</li>`;
+    sections.forEach(s => {
+        navHtml += `<li class="${currentActive === s ? 'active' : ''}" data-section="${s}">${s}</li>`;
+    });
+    dom.nav.innerHTML = navHtml;
 }
 
 function createVideoCard(video) {
