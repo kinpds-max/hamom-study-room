@@ -1,10 +1,13 @@
-// Default Project Data (used if Trello is not connected)
 const defaultData = [
-    { id: "1", section: "movie", title: "AI로 영화 예고편 만들기", description: "Runway Gen-2와 Midjourney를 활용한 고퀄리티 예고편 제작 과정", videoId: "6D2L_9lZk0k", thumbnail: "https://img.youtube.com/vi/6D2L_9lZk0k/maxresdefault.jpg" },
-    { id: "2", section: "design", title: "Midjourney 활용 실전 디자인 기법", description: "프롬프트 마스터가 들려주는 로고 및 웹 디자인 노하우", videoId: "q_m_vY7Q2X8", thumbnail: "https://img.youtube.com/vi/q_m_vY7Q2X8/maxresdefault.jpg" },
-    { id: "3", section: "video", title: "Sora로 시작하는 AI 영상 혁명", description: "OpenAI의 새로운 모델 Sora의 기능분석과 활용 전망", videoId: "HK6y8D_Kq3k", thumbnail: "https://img.youtube.com/vi/HK6y8D_Kq3k/maxresdefault.jpg" },
-    { id: "4", section: "automation", title: "No-code AI 워크플로우 자동화", description: "Zapier와 ChatGPT를 활용한 업무 효율 극대화 전략", videoId: "R_qA9p_Iu50", thumbnail: "https://img.youtube.com/vi/R_qA9p_Iu50/maxresdefault.jpg" },
-    { id: "5", section: "youtube", title: "AI를 활용한 유튜브 채널 성장 비결", description: "조회수 떡상을 위한 AI 제목 및 썸네일 최적화 가이드", videoId: "V-9nS6L2W3w", thumbnail: "https://img.youtube.com/vi/V-9nS6L2W3w/maxresdefault.jpg" }
+    { id: "m1", section: "movie", title: "영화 1강", description: "영화 제작의 기초와 AI 활용", videoId: "RGlDce_W1lI", thumbnail: "https://img.youtube.com/vi/RGlDce_W1lI/maxresdefault.jpg" },
+    { id: "m2", section: "movie", title: "영화 2강", description: "시나리오 구성과 캐릭터 분석", videoId: "I4HvW8l_J9g", thumbnail: "https://img.youtube.com/vi/I4HvW8l_J9g/maxresdefault.jpg" },
+    { id: "m3", section: "movie", title: "영화 3강", description: "영상미 연출과 카메라 워킹", videoId: "3A3dlw8kTSo", thumbnail: "https://img.youtube.com/vi/3A3dlw8kTSo/maxresdefault.jpg" },
+    { id: "m4", section: "movie", title: "영화 4강", description: "디지털 편집과 포스트 프로덕션", videoId: "9GkWw3fsLHA", thumbnail: "https://img.youtube.com/vi/9GkWw3fsLHA/maxresdefault.jpg" },
+    { id: "m5", section: "movie", title: "영화 5강", description: "최종 마스터피스 완성하기", videoId: "u8T0Thh5WNo", thumbnail: "https://img.youtube.com/vi/u8T0Thh5WNo/maxresdefault.jpg" },
+    { id: "d1", section: "design", title: "Midjourney 활용 실전 디자인 기법", description: "프롬프트 마스터가 들려주는 로고 및 웹 디자인 노하우", videoId: "q_m_vY7Q2X8", thumbnail: "https://img.youtube.com/vi/q_m_vY7Q2X8/maxresdefault.jpg" },
+    { id: "v1", section: "video", title: "Sora로 시작하는 AI 영상 혁명", description: "OpenAI의 새로운 모델 Sora의 기능분석과 활용 전망", videoId: "HK6y8D_Kq3k", thumbnail: "https://img.youtube.com/vi/HK6y8D_Kq3k/maxresdefault.jpg" },
+    { id: "a1", section: "automation", title: "No-code AI 워크플로우 자동화", description: "Zapier와 ChatGPT를 활용한 업무 효율 극대화 전략", videoId: "R_qA9p_Iu50", thumbnail: "https://img.youtube.com/vi/R_qA9p_Iu50/maxresdefault.jpg" },
+    { id: "y1", section: "youtube", title: "AI를 활용한 유튜브 채널 성장 비결", description: "조회수 떡상을 위한 AI 제목 및 썸네일 최적화 가이드", videoId: "V-9nS6L2W3w", thumbnail: "https://img.youtube.com/vi/V-9nS6L2W3w/maxresdefault.jpg" }
 ];
 
 let appData = [...defaultData];
