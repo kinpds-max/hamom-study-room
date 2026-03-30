@@ -1,252 +1,256 @@
 const defaultData = [
-    { id: "m1", section: "movie", title: "영화 1강", description: "영화 제작의 기초와 AI 활용", videoId: "RGlDce_W1lI", thumbnail: "https://img.youtube.com/vi/RGlDce_W1lI/maxresdefault.jpg" },
-    { id: "m2", section: "movie", title: "영화 2강", description: "시나리오 구성과 캐릭터 분석", videoId: "I4HvW8l_J9g", thumbnail: "https://img.youtube.com/vi/I4HvW8l_J9g/maxresdefault.jpg" },
-    { id: "m3", section: "movie", title: "영화 3강", description: "영상미 연출과 카메라 워킹", videoId: "3A3dlw8kTSo", thumbnail: "https://img.youtube.com/vi/3A3dlw8kTSo/maxresdefault.jpg" },
-    { id: "m4", section: "movie", title: "영화 4강", description: "디지털 편집과 포스트 프로덕션", videoId: "9GkWw3fsLHA", thumbnail: "https://img.youtube.com/vi/9GkWw3fsLHA/maxresdefault.jpg" },
-    { id: "m5", section: "movie", title: "영화 5강", description: "최종 마스터피스 완성하기", videoId: "u8T0Thh5WNo", thumbnail: "https://img.youtube.com/vi/u8T0Thh5WNo/maxresdefault.jpg" },
-    { id: "d1", section: "design", title: "Midjourney 활용 실전 디자인 기법", description: "프롬프트 마스터가 들려주는 로고 및 웹 디자인 노하우", videoId: "q_m_vY7Q2X8", thumbnail: "https://img.youtube.com/vi/q_m_vY7Q2X8/maxresdefault.jpg" },
-    { id: "v1", section: "video", title: "Sora로 시작하는 AI 영상 혁명", description: "OpenAI의 새로운 모델 Sora의 기능분석과 활용 전망", videoId: "HK6y8D_Kq3k", thumbnail: "https://img.youtube.com/vi/HK6y8D_Kq3k/maxresdefault.jpg" },
-    { id: "a1", section: "automation", title: "No-code AI 워크플로우 자동화", description: "Zapier와 ChatGPT를 활용한 업무 효율 극대화 전략", videoId: "R_qA9p_Iu50", thumbnail: "https://img.youtube.com/vi/R_qA9p_Iu50/maxresdefault.jpg" },
-    { id: "y1", section: "youtube", title: "AI를 활용한 유튜브 채널 성장 비결", description: "조회수 떡상을 위한 AI 제목 및 썸네일 최적화 가이드", videoId: "V-9nS6L2W3w", thumbnail: "https://img.youtube.com/vi/V-9nS6L2W3w/maxresdefault.jpg" }
-];
+    { id: "m1", section: "movie", title: "\uc601\ud654 1\uac15", description: "\uc601\ud654 \uc81c\uc791\uc758 \uae30\ucd08\uc640 AI \ud65c\uc6a9", videoId: "RGlDce_W1lI", thumbnail: "https://img.youtube.com/vi/RGlDce_W1lI/maxresdefault.jpg" },
+    { id: "m2", section: "movie", title: "\uc601\ud654 2\uac15", description: "\uc2dc\ub098\ub9ac\uc624 \uac70\uc131\uacfc \uce90\ub9ad\ud130 \ubd04\uc11d", videoId: "I4HvW8l_J9g", thumbnail: "https://img.youtube.com/vi/I4HvW8l_J9g/maxresdefault.jpg" },
+    { id: "m3", section: "movie", title: "\uc601\ud654 3\uac15", description: "\uc601\uc0c1\ubbf8 \uc5f0\ucd9c\uacfc \uce74\uba54\ub77c \uc6cc\ud0b9", videoId: "3A3dlw8kTSo", thumbnail: "https://img.youtube.com/vi/3A3dlw8kTSo/maxresdefault.jpg" },
+    { id: "m4", section: "movie", title: "\uc601\ud654 4\uac15", description: "\ub514\uc9c0\ud138 \ud3b8\uc9d1\uacfc \ud3ec\uc2a4\ud2b8 \ud504\ub85c\ub355\uc158", videoId: "9GkWw3fsLHA", thumbnail: "https://img.youtube.com/vi/9GkWw3fsLHA/maxresdefault.jpg" },
+    { id: "m5", section: "movie", title: "\uc601\ud654 5\uac15", description: "\ucc28\uc88c \ub9c8\uc2a4\ud130\ud53c\uc2a4 \uc644\uc131\ud558\uae30", videoId: "u8T0Thh5WNo", thumbnail: "https://img.youtube.com/vi/u8T0Thh5WNo/maxresdefault.jpg" },
+    { id: "d1", section: "design", title: "Midjourney \ud65c\uc6a9 \uc2e4\uc804 \ub514\uc9c0\uc778 \uae30\ubc95", description: "\ud504\ub86c\ud504\ud2b8 \ub9c8\uc2a4\ud130\uac00 \ub4e4\ub824\uc8fc\ub294 \ub85c\uace0 \ubc0f \uc6f9 \ub514\uc9c0\uc778 \ub178\ud558\uc6b0", videoId: "q_m_vY7Q2X8", thumbnail: "https://img.youtube.com/vi/q_m_vY7Q2X8/maxresdefault.jpg" },
+    { id: "v1", section: "video", title: "Sora\ub85c \uc2dc\uc791\ud558\ub294 AI \uc601\uc0c1 \ud601\uba85", description: "OpenAI\uc758 \uc0c8\ub85c\uc6b4 \ubaa8\ub378 Sora\uc758 \uae30\ub2a5\ubd84\uc11d\uacfc \ud65c\uc6a9 \uc804\ub9dd", videoId: "HK6y8D_Kq3k", thumbnail: "https://img.youtube.com/vi/HK6y8D_Kq3k/maxresdefault.jpg" },
+    { id: "a1", section: "automation", title: "No-code AI \uc6cc\ud06c\ud50c\ub85c\uc6b0 \uc790\ub3d9\ud654", description: "Zapier\uc640 ChatGPT\ub97c \ud65c\uc6a9\ud55c \uc5c5\ubb34 \ud6a8\uc728 \uac1d\ub300\ud654 \uc804\ub7b5", videoId: "R_qA9p_Iu50", thumbnail: "https://img.youtube.com/vi/R_qA9p_Iu50/maxresdefault.jpg" },
+    { id: "y1", section: "youtube", title: "AI\ub97c \ud65c\uc6a9\ud55c \uc720\ud22c\ube0c \ucc44\ub110 \uc131\uc7a5 \ube44\uacb0", description: "\uc870\ud68c\uc218 \ub5a1\uc0c1\uc744 \uc704\ud55c AI \uc81c\ubaa9 \ubc0f \uc378\ub124\uc77c \ucd5c\uc801\ud654 \uac00\uc774\ub4dc", videoId: "V-9nS6L2W3w", thumbnail: "https://img.youtube.com/vi/V-9nS6L2W3w/maxresdefault.jpg" }
+    ];
 
 let appData = [...defaultData];
-let dynamicSections = {}; // To store listId -> listName mapping
-
-// UI Elements
+let dynamicSections = {};
 const dom = {
-    nav: document.getElementById('category-nav'),
-    gridWrapper: document.getElementById('video-grid-wrapper'),
-    videoModal: document.getElementById('video-modal'),
-    settingsModal: document.getElementById('settings-modal'),
-    modalIframe: document.getElementById('youtube-player'),
-    modalTitle: document.getElementById('modal-video-title'),
-    modalDesc: document.getElementById('modal-video-desc'),
-    closeVideo: document.querySelector('.close-modal'),
-    closeSettings: document.querySelector('.close-settings'),
-    openSettings: document.getElementById('open-settings'),
-    saveSettings: document.getElementById('save-settings'),
-    sourceBadge: document.getElementById('source-name'),
-    
-    // Inputs
-    trelloKey: document.getElementById('trello-key'),
-    trelloToken: document.getElementById('trello-token'),
-    trelloBoard: document.getElementById('trello-board')
+        nav: document.getElementById('category-nav'),
+        gridWrapper: document.getElementById('video-grid-wrapper'),
+        videoModal: document.getElementById('video-modal'),
+        settingsModal: document.getElementById('settings-modal'),
+        modalIframe: document.getElementById('youtube-player'),
+        modalTitle: document.getElementById('modal-video-title'),
+        modalDesc: document.getElementById('modal-video-desc'),
+        closeVideo: document.querySelector('.close-modal'),
+        closeSettings: document.querySelector('.close-settings'),
+        openSettings: document.getElementById('open-settings'),
+        saveSettings: document.getElementById('save-settings'),
+        sourceBadge: document.getElementById('source-name'),
+        trelloKey: document.getElementById('trello-key'),
+        trelloToken: document.getElementById('trello-token'),
+        trelloBoard: document.getElementById('trello-board')
 };
 
-// Trello API Service
 const TrelloService = {
-    async fetchCards(key, token, boardId) {
-        try {
-            const listsUrl = `https://api.trello.com/1/boards/${boardId}/lists?key=${key}&token=${token}`;
-            const listsResp = await fetch(listsUrl);
-            const lists = await listsResp.json();
+        async fetchCards(key, token, boardId) {
+                    try {
+                                    const listsUrl = `https://api.trello.com/1/boards/${boardId}/lists?key=${key}&token=${token}`;
+                                    const listsResp = await fetch(listsUrl);
+                                    const lists = await listsResp.json();
 
-            const cardsUrl = `https://api.trello.com/1/boards/${boardId}/cards?key=${key}&token=${token}`;
-            const cardsResp = await fetch(cardsUrl);
-            const cards = await cardsResp.json();
+                        const cardsUrl = `https://api.trello.com/1/boards/${boardId}/cards?key=${key}&token=${token}`;
+                                    const cardsResp = await fetch(cardsUrl);
+                                    const cards = await cardsResp.json();
 
-            // Store list names dynamically
-            dynamicSections = {};
-            lists.forEach(l => dynamicSections[l.id] = l.name);
+                        dynamicSections = {};
+                                    lists.forEach(l => dynamicSections[l.id] = l.name);
 
-            return this.transformData(cards, lists);
-        } catch (error) {
-            console.error("Trello Fetch Error:", error);
-            return null;
+                        return this.transformData(cards, lists);
+                    } catch (error) {
+                                    console.error("Trello Fetch Error:", error);
+                                    return null;
+                    }
+        },
+
+        transformData(cards, lists) {
+                    return cards
+                        .filter(card => {
+                                            const listName = dynamicSections[card.idList] || "";
+                                            return card.name.includes('*') || listName.includes('*') || card.name === '\uc601\ud6545\uac15';
+                        })
+                        .map(card => {
+                                            const rawListName = dynamicSections[card.idList] || "                const rawListName = dynamicSections[card.idList] || "Other";
+                                                                const videoId = this.extractYoutubeId(card.desc);
+                                            const listName = rawListName.replace(/\*/g, '').trim();
+
+                                             let displayTitle = card.name;
+                                            if (displayTitle === '\uc601\ud6545\uac15') {
+                                                                    displayTitle = '\uc601\ud654\uac15\uc758*';
+                                            }
+
+                                             return {
+                                                                     id: card.id,
+                                                                     section: listName,
+                                                                     title: displayTitle,
+                                                                     description: card.desc.split('\n')[0] || "No description.",
+                                                                     videoId: videoId,
+                                                                     thumbnail: videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : 'https://via.placeholder.com/640x360?text=No+Video',
+                                                                     pos: card.pos
+                                             };
+                        })
+                        .filter(item => item.videoId)
+                        .sort((a, b) => a.pos - b.pos);
+        },
+
+        extractYoutubeId(text) {
+                    const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+                    const match = (text || '').match(regex);
+                    return match ? match[1] : null;
         }
-    },
-
-    transformData(cards, lists) {
-        return cards
-            .map(card => {
-                const listName = dynamicSections[card.idList] || "기타";
-                const videoId = this.extractYoutubeId(card.desc);
-                return {
-                    id: card.id,
-                    section: listName, // Use the actual list name as the section key
-                    title: card.name,
-                    description: card.desc.split('\n')[0] || "강의 설명이 없습니다.",
-                    videoId: videoId,
-                    thumbnail: videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : 'https://via.placeholder.com/640x360?text=No+Video',
-                    pos: card.pos // Keep track of the order set in Trello
-                };
-            })
-            .filter(item => item.videoId)
-            .sort((a, b) => a.pos - b.pos); // Sort by Trello position
-    },
-
-    extractYoutubeId(text) {
-        const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
-        const match = (text || '').match(regex);
-        return match ? match[1] : null;
-    }
 };
 
-// Main Functions
 function renderSections(filter = 'all') {
-    dom.gridWrapper.innerHTML = '';
-    
-    // Get unique sections from current data
-    const sections = [...new Set(appData.map(v => v.section))];
-    
-    // Filter sections based on selection
-    const activeSections = filter === 'all' ? sections : [filter];
-
-    // Re-render Navigation dynamically if it's the first Trello sync
-    updateNavigation(sections);
+        dom.gridWrapper.innerHTML = '';
+        const sections = [...new Set(appData.map(v => v.section))];
+        const activeSections = filter === 'all' ? sections : [filter];
+        updateNavigation(sections);
 
     activeSections.forEach(sectionName => {
-        const sectionVideos = appData.filter(v => v.section === sectionName);
-        if (sectionVideos.length === 0) return;
-        
-        const sectionElement = document.createElement('section');
-        sectionElement.className = 'video-section fade-in';
-        sectionElement.innerHTML = `
-            <div class="section-header">
-                <h2>${sectionName}</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="video-grid" id="grid-${sectionName.replace(/\s+/g, '-')}"></div>
-        `;
-        
-        dom.gridWrapper.appendChild(sectionElement);
-        const grid = document.getElementById(`grid-${sectionName.replace(/\s+/g, '-')}`);
-        
-        sectionVideos.forEach(video => {
-            const card = createVideoCard(video);
-            grid.appendChild(card);
-        });
+                const sectionVideos = appData.filter(v => v.section === sectionName);
+                if (sectionVideos.length === 0) return;
+
+                                   const sectionElement = document.createElement('section');
+                sectionElement.className = 'video-section fade-in';
+                sectionElement.innerHTML = `
+                            <div class="section-header">
+                                                          <h2>${sectionName}</h2>
+                                                                          <div class="section-line"></div>
+                                                                                      </div>
+                                                                                                  <div class="video-grid" id="grid-${sectionName.replace(/\s+/g, '-')}"></div>
+                                                                                                          `;
+
+                                   dom.gridWrapper.appendChild(sectionElement);
+                const grid = document.getElementById(`grid-${sectionName.replace(/\s+/g, '-')}`);
+
+                                   sectionVideos.forEach(video => {
+                                                   const card = createVideoCard(video);
+                                                   grid.appendChild(card);
+                                   });
     });
 }
 
 function updateNavigation(sections) {
-    // Basic labels for localized names or icons could be added here if needed
-    // For now we just use the names from Trello as labels
-    const currentActive = document.querySelector('#category-nav li.active')?.dataset.section || 'all';
-    
-    let navHtml = `<li class="${currentActive === 'all' ? 'active' : ''}" data-section="all">전체보기</li>`;
-    sections.forEach(s => {
-        navHtml += `<li class="${currentActive === s ? 'active' : ''}" data-section="${s}">${s}</li>`;
-    });
-    dom.nav.innerHTML = navHtml;
+        const currentActive = document.querySelector('#category-nav li.active')?.dataset.section || 'all';
+        let navHtml = `<li class="${currentActive === 'all' ? 'active' : ''}" data-section="all">View All</li>`;
+        sections.forEach(s => {
+                    navHtml += `<li class="${currentActive === s ? 'active' : ''}" data-section="${s}">${s}</li>`;
+        });
+        dom.nav.innerHTML = navHtml;
 }
 
 function createVideoCard(video) {
-    const card = document.createElement('div');
-    card.className = 'video-card';
-    
-    // Add lock icon if it's a movie section
-    const isLocked = video.section.includes('영화') || video.section.toLowerCase().includes('movie');
-    const lockHtml = isLocked ? '<div class="lock-overlay"><i class="fas fa-lock"></i></div>' : '';
+        const card = document.createElement('div');
+        card.className = 'video-card';
+
+    const isLocked = video.section.toLowerCase().includes('movie');
+        const lockHtml = isLocked ? '<div class="lock-overlay"><i class="fas fa-lock"></i></div>' : '';
 
     card.innerHTML = `
-        <div class="thumbnail-wrapper">
-            <img src="${video.thumbnail}" alt="${video.title}" loading="lazy">
-            ${lockHtml}
-            <div class="play-button-overlay">
-                <i class="fas fa-play" style="color: white; font-size: 1.5rem;"></i>
-            </div>
-        </div>
-        <div class="video-info-content">
-            <h3>${video.title}</h3>
-            <p>${video.description}</p>
-        </div>
-    `;
+            <div class="thumbnail-wrapper">
+                        <img src="${video.thumbnail}" alt="${video.title}" loading="lazy">
+                                    ${lockHtml}
+                                                <div class="play-button-overlay">
+                                                                <i class="fas fa-play" style="color: white; font-size: 1.5rem;"></i>
+                                                                            </div>
+                                                                                    </div>
+                                                                                            <div class="video-info-content">
+                                                                                                        <h3>${video.title}</h3>
+                                                                                                                    <p>${video.description}</p>
+                                                                                                                            </div>
+                                                                                                                                `;
 
     card.addEventListener('click', () => {
-        if (isLocked) {
-            const password = prompt("이 강의는 잠겨 있습니다. 비밀번호를 입력하세요:");
-            if (password !== "1191004") {
-                alert("비밀번호가 틀렸습니다.");
-                return;
-            }
-        }
-        
-        dom.modalTitle.textContent = video.title;
-        dom.modalDesc.textContent = video.description;
-        dom.modalIframe.src = `https://www.youtube.com/embed/${video.videoId}?autoplay=1`;
-        dom.videoModal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
+                if (isLocked) {
+                                const password = prompt("Locked. Enter password:");
+                                if (password !== "1191004") {
+                                                    alert("Wrong password.");
+                                                    return;
+                                }
+                }
+
+                                  dom.modalTitle.textContent = video.title;
+                dom.modalDesc.textContent = video.description;
+                dom.modalIframe.src = `https://www.youtube.com/embed/${video.videoId}?autoplay=1`;
+                dom.videoModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
     });
-    return card;
+        return card;
 }
 
-// Settings and Sync Logic
 async function syncWithTrello() {
-    const key = dom.trelloKey.value;
-    const token = dom.trelloToken.value;
-    const boardId = dom.trelloBoard.value;
+        const key = dom.trelloKey.value;
+        const token = dom.trelloToken.value;
+        const boardId = dom.trelloBoard.value;
 
     if (!key || !token || !boardId) {
-        alert("모든 설정 정보를 입력해주세요.");
-        return;
+                alert("Enter all settings.");
+                return;
     }
 
-    dom.saveSettings.textContent = "동기화 중...";
-    dom.saveSettings.disabled = true;
+    dom.saveSettings.textContent = "Syncing...";
+        dom.saveSettings.disabled = true;
 
     const newCards = await TrelloService.fetchCards(key, token, boardId);
-    
+
     if (newCards && newCards.length > 0) {
-        appData = newCards;
-        localStorage.setItem('trelloConfig', JSON.stringify({ key, token, boardId }));
-        dom.sourceBadge.textContent = "Trello Connected";
-        dom.sourceBadge.style.color = "#00f5d4"; // Bright green for success
-        renderSections();
-        alert(`성공적으로 트렐로와 연동되었습니다!\n총 ${newCards.length}개의 강의를 가져왔습니다.`);
-        dom.settingsModal.style.display = 'none';
+                appData = newCards;
+                localStorage.setItem('trelloConfig', JSON.stringify({ key, token, boardId }));
+                dom.sourceBadge.textContent = "Trello Connected";
+                dom.sourceBadge.style.color = "#00f5d4";
+                renderSections();
+                alert("Sync successful!");
+                dom.settingsModal.style.display = 'none';
     } else {
-        alert("데이터를 가져오지 못했습니다. 다음을 확인해 주세요:\n1. API 키와 토큰이 정확한지\n2. 보드 ID가 맞는지\n3. kinpds@gmail.com 계정이 보드에 초대되었는지");
+                alert("Fetch failed. Check YouTube links in description.");
     }
 
-    dom.saveSettings.textContent = "설정 저장 및 동기화";
-    dom.saveSettings.disabled = false;
+    dom.saveSettings.textContent = "Save and Sync";
+        dom.saveSettings.disabled = false;
 }
 
-// Event Listeners
 dom.nav.addEventListener('click', (e) => {
-    if (e.target.tagName === 'LI') {
-        document.querySelectorAll('#category-nav li').forEach(li => li.classList.remove('active'));
-        e.target.classList.add('active');
-        renderSections(e.target.dataset.section);
-    }
+        if (e.target.tagName === 'LI') {
+                    document.querySelectorAll('#category-nav li').forEach(li => li.classList.remove('active'));
+                    e.target.classList.add('active');
+                    renderSections(e.target.dataset.section);
+        }
 });
 
 dom.openSettings.addEventListener('click', () => dom.settingsModal.style.display = 'block');
 dom.closeSettings.addEventListener('click', () => dom.settingsModal.style.display = 'none');
 dom.closeVideo.addEventListener('click', () => {
-    dom.videoModal.style.display = 'none';
-    dom.modalIframe.src = '';
-    document.body.style.overflow = 'auto';
+        dom.videoModal.style.display = 'none';
+        dom.modalIframe.src = '';
+        document.body.style.overflow = 'auto';
 });
 
 dom.saveSettings.addEventListener('click', syncWithTrello);
 
 window.addEventListener('click', (e) => {
-    if (e.target === dom.videoModal) dom.closeVideo.click();
-    if (e.target === dom.settingsModal) dom.settingsModal.style.display = 'none';
+        if (e.target === dom.videoModal) dom.closeVideo.click();
+        if (e.target === dom.settingsModal) dom.settingsModal.style.display = 'none';
 });
 
-// Init
 document.addEventListener('DOMContentLoaded', async () => {
-    const config = JSON.parse(localStorage.getItem('trelloConfig'));
-    if (config && config.key && config.token && config.boardId) {
-        // Pre-fill inputs
-        dom.trelloKey.value = config.key;
-        dom.trelloToken.value = config.token;
-        dom.trelloBoard.value = config.boardId;
-        
-        // Auto-sync silently
-        console.log("Auto-syncing with Trello...");
-        const newCards = await TrelloService.fetchCards(config.key, config.token, config.boardId);
-        if (newCards) {
-            appData = newCards;
-            dom.sourceBadge.textContent = "Trello Auto-Synced";
-            dom.sourceBadge.style.color = "#4cc9f0";
-            renderSections();
-        }
-    } else {
-        renderSections();
-    }
+        const config = JSON.parse(localStorage.getItem('trelloConfig')) || {};
+        const key = config.key || '383bd25f2d7712826136085195055acd';
+        const token = config.token || 'ATTA187121140b4d0501ea6af7183fd4b127d0b77cc563673def06eb429acc4f2fee5F28E728';
+        const boardId = config.boardId || 'SzwyFW3E';
+
+                              dom.trelloKey.value = key;
+        dom.trelloToken.value = token;
+        dom.trelloBoard.value = boardId;
+
+                              if (key && token && boardId) {
+                                          dom.sourceBadg
+                                          dom.sourceBadge.textContent = "Connecting...";
+                                          try {
+                                                          const newCards = await TrelloService.fetchCards(key, token, boardId);
+                                                          if (newCards && newCards.length > 0) {
+                                                                              appData = newCards;
+                                                                              dom.sourceBadge.textContent = "Trello Connected";
+                                                                              dom.sourceBadge.style.color = "#00f5d4";
+                                                                              renderSections();
+                                                          } else {
+                                                                              dom.sourceBadge.textContent = "Trello Link Error";
+                                                                              dom.sourceBadge.style.color = "#ff6b6b";
+                                                                              renderSections();
+                                                          }
+                                          } catch (err) {
+                                                          dom.sourceBadge.textContent = "Sync Failed";
+                                                          dom.sourceBadge.style.color = "#ff6b6b";
+                                                          renderSections();
+                                          }
+                              } else {
+                                          renderSections();
+                              }
 });
