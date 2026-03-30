@@ -1,17 +1,18 @@
 const defaultData = [
-    { id: "m1", section: "movie", title: "\uc601\ud654 1\uac15", description: "\uc601\ud654 \uc81c\uc791\uc758 \uae30\ucd08\uc640 AI \ud65c\uc6a9", videoId: "RGlDce_W1lI", thumbnail: "https://img.youtube.com/vi/RGlDce_W1lI/maxresdefault.jpg" },
-    { id: "m2", section: "movie", title: "\uc601\ud654 2\uac15", description: "\uc2dc\ub098\ub9ac\uc624 \uac70\uc131\uacfc \uce90\ub9ad\ud130 \ubd04\uc11d", videoId: "I4HvW8l_J9g", thumbnail: "https://img.youtube.com/vi/I4HvW8l_J9g/maxresdefault.jpg" },
-    { id: "m3", section: "movie", title: "\uc601\ud654 3\uac15", description: "\uc601\uc0c1\ubbf8 \uc5f0\ucd9c\uacfc \uce74\uba54\ub77c \uc6cc\ud0b9", videoId: "3A3dlw8kTSo", thumbnail: "https://img.youtube.com/vi/3A3dlw8kTSo/maxresdefault.jpg" },
-    { id: "m4", section: "movie", title: "\uc601\ud654 4\uac15", description: "\ub514\uc9c0\ud138 \ud3b8\uc9d1\uacfc \ud3ec\uc2a4\ud2b8 \ud504\ub85c\ub355\uc158", videoId: "9GkWw3fsLHA", thumbnail: "https://img.youtube.com/vi/9GkWw3fsLHA/maxresdefault.jpg" },
-    { id: "m5", section: "movie", title: "\uc601\ud654 5\uac15", description: "\ucc28\uc88c \ub9c8\uc2a4\ud130\ud53c\uc2a4 \uc644\uc131\ud558\uae30", videoId: "u8T0Thh5WNo", thumbnail: "https://img.youtube.com/vi/u8T0Thh5WNo/maxresdefault.jpg" },
-    { id: "d1", section: "design", title: "Midjourney \ud65c\uc6a9 \uc2e4\uc804 \ub514\uc9c0\uc778 \uae30\ubc95", description: "\ud504\ub86c\ud504\ud2b8 \ub9c8\uc2a4\ud130\uac00 \ub4e4\ub824\uc8fc\ub294 \ub85c\uace0 \ubc0f \uc6f9 \ub514\uc9c0\uc778 \ub178\ud558\uc6b0", videoId: "q_m_vY7Q2X8", thumbnail: "https://img.youtube.com/vi/q_m_vY7Q2X8/maxresdefault.jpg" },
-    { id: "v1", section: "video", title: "Sora\ub85c \uc2dc\uc791\ud558\ub294 AI \uc601\uc0c1 \ud601\uba85", description: "OpenAI\uc758 \uc0c8\ub85c\uc6b4 \ubaa8\ub378 Sora\uc758 \uae30\ub2a5\ubd84\uc11d\uacfc \ud65c\uc6a9 \uc804\ub9dd", videoId: "HK6y8D_Kq3k", thumbnail: "https://img.youtube.com/vi/HK6y8D_Kq3k/maxresdefault.jpg" },
-    { id: "a1", section: "automation", title: "No-code AI \uc6cc\ud06c\ud50c\ub85c\uc6b0 \uc790\ub3d9\ud654", description: "Zapier\uc640 ChatGPT\ub97c \ud65c\uc6a9\ud55c \uc5c5\ubb34 \ud6a8\uc728 \uac1d\ub300\ud654 \uc804\ub7b5", videoId: "R_qA9p_Iu50", thumbnail: "https://img.youtube.com/vi/R_qA9p_Iu50/maxresdefault.jpg" },
-    { id: "y1", section: "youtube", title: "AI\ub97c \ud65c\uc6a9\ud55c \uc720\ud22c\ube0c \ucc44\ub110 \uc131\uc7a5 \ube44\uacb0", description: "\uc870\ud68c\uc218 \ub5a1\uc0c1\uc744 \uc704\ud55c AI \uc81c\ubaa9 \ubc0f \uc378\ub124\uc77c \ucd5c\uc801\ud654 \uac00\uc774\ub4dc", videoId: "V-9nS6L2W3w", thumbnail: "https://img.youtube.com/vi/V-9nS6L2W3w/maxresdefault.jpg" }
-    ];
+    { id: "m1", section: "movie", title: "Movie 1", description: "Movie production base", videoId: "RGlDce_W1lI", thumbnail: "https://img.youtube.com/vi/RGlDce_W1lI/maxresdefault.jpg" },
+    { id: "m2", section: "movie", title: "Movie 2", description: "Scenario and characters", videoId: "I4HvW8l_J9g", thumbnail: "https://img.youtube.com/vi/I4HvW8l_J9g/maxresdefault.jpg" },
+    { id: "m3", section: "movie", title: "Movie 3", description: "Directing and camera", videoId: "3A3dlw8kTSo", thumbnail: "https://img.youtube.com/vi/3A3dlw8kTSo/maxresdefault.jpg" },
+    { id: "m4", section: "movie", title: "Movie 4", description: "Editing and post-production", videoId: "9GkWw3fsLHA", thumbnail: "https://img.youtube.com/vi/9GkWw3fsLHA/maxresdefault.jpg" },
+    { id: "m5", section: "movie", title: "Movie 5", description: "Masterpiece completion", videoId: "u8T0Thh5WNo", thumbnail: "https://img.youtube.com/vi/u8T0Thh5WNo/maxresdefault.jpg" },
+    { id: "d1", section: "design", title: "Design Study", description: "Logo and web design with AI", videoId: "q_m_vY7Q2X8", thumbnail: "https://img.youtube.com/vi/q_m_vY7Q2X8/maxresdefault.jpg" },
+    { id: "v1", section: "video", title: "Video Study", description: "OpenAI Sora analysis", videoId: "HK6y8D_Kq3k", thumbnail: "https://img.youtube.com/vi/HK6y8D_Kq3k/maxresdefault.jpg" },
+    { id: "a1", section: "automation", title: "Automation Study", description: "Workflow automation", videoId: "R_qA9p_Iu50", thumbnail: "https://img.youtube.com/vi/R_qA9p_Iu50/maxresdefault.jpg" },
+    { id: "y1", section: "youtube", title: "YouTube Study", description: "Channel growth with AI", videoId: "V-9nS6L2W3w", thumbnail: "https://img.youtube.com/vi/V-9nS6L2W3w/maxresdefault.jpg" }
+     ];
 
 let appData = [...defaultData];
 let dynamicSections = {};
+
 const dom = {
         nav: document.getElementById('category-nav'),
         gridWrapper: document.getElementById('video-grid-wrapper'),
@@ -58,13 +59,13 @@ const TrelloService = {
                                             return card.name.includes('*') || listName.includes('*') || card.name === '\uc601\ud6545\uac15';
                         })
                         .map(card => {
-                                            const rawListName = dynamicSections[card.idList] || "                const rawListName = dynamicSections[card.idList] || "Other";
-                                                                const videoId = this.extractYoutubeId(card.desc);
+                                            const rawListName = dynamicSections[card.idList] || "Other";
+                                            const videoId = this.extractYoutubeId(card.desc);
                                             const listName = rawListName.replace(/\*/g, '').trim();
 
                                              let displayTitle = card.name;
                                             if (displayTitle === '\uc601\ud6545\uac15') {
-                                                                    displayTitle = '\uc601\ud654\uac15\uc758*';
+                                                                    displayTitle = 'Movie 5*';
                                             }
 
                                              return {
@@ -102,11 +103,11 @@ function renderSections(filter = 'all') {
                 sectionElement.className = 'video-section fade-in';
                 sectionElement.innerHTML = `
                             <div class="section-header">
-                                                          <h2>${sectionName}</h2>
-                                                                          <div class="section-line"></div>
-                                                                                      </div>
-                                                                                                  <div class="video-grid" id="grid-${sectionName.replace(/\s+/g, '-')}"></div>
-                                                                                                          `;
+                                            <h2>${sectionName}</h2>
+                                                            <div class="section-line"></div>
+                                                                        </div>
+                                                                                    <div class="video-grid" id="grid-${sectionName.replace(/\s+/g, '-')}"></div>
+                                                                                            `;
 
                                    dom.gridWrapper.appendChild(sectionElement);
                 const grid = document.getElementById(`grid-${sectionName.replace(/\s+/g, '-')}`);
@@ -190,7 +191,7 @@ async function syncWithTrello() {
                 alert("Sync successful!");
                 dom.settingsModal.style.display = 'none';
     } else {
-                alert("Fetch failed. Check YouTube links in description.");
+                alert("Fetch failed.");
     }
 
     dom.saveSettings.textContent = "Save and Sync";
@@ -230,8 +231,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         dom.trelloToken.value = token;
         dom.trelloBoard.value = boardId;
 
+
                               if (key && token && boardId) {
-                                          dom.sourceBadg
                                           dom.sourceBadge.textContent = "Connecting...";
                                           try {
                                                           const newCards = await TrelloService.fetchCards(key, token, boardId);
