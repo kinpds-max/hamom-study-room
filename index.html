@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하맘AI공부방 - 혁신적인 AI 클래스 플랫폼</title>
+    <meta name="description" content="영화수업, AI디자인, AI영상, AI자동화, AI유튜브 수업까지! 하맘AI공부방에서 한눈에 교육 영상들을 관리하고 시청하세요.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script> <!-- Placeholder for FontAwesome or similar -->
+</head>
+<body class="dark-theme">
+    <header>
+        <div class="logo-container">
+            <h1 id="main-title">하맘AI<span>공부방</span></h1>
+        </div>
+        <nav>
+            <ul id="category-nav">
+                <li class="active" data-section="all">전체</li>
+                <li data-section="movie">영화수업</li>
+                <li data-section="design">AI디자인수업</li>
+                <li data-section="video">AI영상수업</li>
+                <li data-section="automation">AI자동화수업</li>
+                <li data-section="youtube">AI유튜브 수업</li>
+            </ul>
+        </nav>
+        <div class="settings-btn" id="open-settings">
+            <i class="fas fa-sync-alt"></i> 트렐로 연동
+        </div>
+    </header>
+
+    <main id="app-container">
+        <!-- Hero Section -->
+        <section id="hero" class="glass-effect">
+            <div class="hero-content">
+                <h2>학습을 가속화하는<br>AI 마스터 클래스</h2>
+                <p>우수한 AI 컨텐츠를 섹션별로 정리하여 체계적인 학습 환경을 제공합니다.</p>
+            </div>
+            <div class="data-status-badge" id="data-source-badge">
+                <i class="fab fa-trello"></i> <span id="source-name">Local Data Ready</span>
+            </div>
+        </section>
+
+        <!-- Video Grid Sections -->
+        <div id="video-grid-wrapper">
+            <!-- Sections will be dynamically injected here by app.js -->
+        </div>
+    </main>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content glass-effect">
+            <span class="close-modal">&times;</span>
+            <div class="video-wrapper">
+                <iframe id="youtube-player" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3 id="modal-video-title">강의 제목</h3>
+                <p id="modal-video-desc">강의 설명이 들어갈 자리입니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content glass-effect settings-content">
+            <span class="close-settings">&times;</span>
+            <h2>트렐로(Trello) 연동 설정</h2>
+            <p>트렐로 보드에서 영상 데이터를 가져오려면 아래 정보를 입력하세요.</p>
+            <div class="input-group">
+                <label>API Key</label>
+                <input type="text" id="trello-key" placeholder="Trello API Key를 입력하세요">
+            </div>
+            <div class="input-group">
+                <label>Token</label>
+                <input type="password" id="trello-token" placeholder="Trello API Token을 입력하세요">
+            </div>
+            <div class="input-group">
+                <label>Board ID</label>
+                <input type="text" id="trello-board" placeholder="Trello Board ID를 입력하세요">
+            </div>
+            <button id="save-settings" class="primary-btn">설정 저장 및 동기화</button>
+            <div class="help-links">
+                <a href="https://trello.com/app-key" target="_blank">API Key 받으러 가기</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 하맘컨텐츠. All Rights Reserved.</p>
+        <p class="footer-contact">Contact: <a href="mailto:david@hasnol.kr">david@hasnol.kr</a></p>
+        <div class="social-links">
+            <!-- Add social icons if needed -->
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
